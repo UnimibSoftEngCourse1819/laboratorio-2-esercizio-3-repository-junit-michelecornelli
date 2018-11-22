@@ -5,6 +5,7 @@ import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertGreaterPrim;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotSame;
 import static org.junit.Assert.assertNull;
@@ -33,6 +34,15 @@ public class AssertionTest {
 // @Test (expected=AssertionError.class) public void error() {
 //      assert false;
 //  }
+    public void greaterPrim() {
+        assertGreaterPrim((byte) 2, (byte) 1);
+        assertGreaterPrim((short) 2, (short) 1);
+        assertGreaterPrim(2, 1); // int by default, cast is unnecessary
+        assertGreaterPrim(2l, 1l);
+        assertGreaterPrim(1.1, 1.0);
+        assertGreaterPrim(1.1d, 1.0d);
+        assertGreaterPrim('a', 'b');
+    }
 
     private static final String ASSERTION_ERROR_EXPECTED = "AssertionError expected";
 
