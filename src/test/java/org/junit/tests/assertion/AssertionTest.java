@@ -5,6 +5,7 @@ import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertGreaterThan;
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotSame;
 import static org.junit.Assert.assertNull;
@@ -33,6 +34,19 @@ public class AssertionTest {
 // @Test (expected=AssertionError.class) public void error() {
 //      assert false;
 //  }
+    private class IntNum implements java.util.Comparator<Integer> {
+        public int compare(Integer v, Integer w){
+           return (v.intValue() > w.intValue()) ? 1 : 0;
+        }
+     }
+    @Test
+    public void greaterThan() {
+        java.util.Comparator<Integer> intNum = new IntNum();
+        assertGreaterThan(2, 1, intNum);
+        Integer uno = new Integer(1);
+        Integer due = new Integer(2);
+        assertGreaterThan(due, uno, intNum);      
+    }
 
     private static final String ASSERTION_ERROR_EXPECTED = "AssertionError expected";
 
