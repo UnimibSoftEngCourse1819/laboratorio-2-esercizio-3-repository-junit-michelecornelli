@@ -5,7 +5,11 @@ import static org.hamcrest.CoreMatchers.instanceOf;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertArrayEquals;
 import static org.junit.Assert.assertEquals;
+<<<<<<< HEAD
 import static org.junit.Assert.assertGreaterThan;
+=======
+import static org.junit.Assert.assertGreaterPrim;
+>>>>>>> refs/heads/greater-primitives
 import static org.junit.Assert.assertNotEquals;
 import static org.junit.Assert.assertNotSame;
 import static org.junit.Assert.assertNull;
@@ -34,6 +38,7 @@ public class AssertionTest {
 // @Test (expected=AssertionError.class) public void error() {
 //      assert false;
 //  }
+<<<<<<< HEAD
     private class IntNum implements java.util.Comparator<Integer> {
         public int compare(Integer v, Integer w){
            return (v.intValue() > w.intValue()) ? 1 : 0;
@@ -46,6 +51,16 @@ public class AssertionTest {
         Integer uno = new Integer(1);
         Integer due = new Integer(2);
         assertGreaterThan(due, uno, intNum);      
+=======
+    public void greaterPrim() {
+        assertGreaterPrim((byte) 2, (byte) 1);
+        assertGreaterPrim((short) 2, (short) 1);
+        assertGreaterPrim(2, 1); // int by default, cast is unnecessary
+        assertGreaterPrim(2l, 1l);
+        assertGreaterPrim(1.1, 1.0);
+        assertGreaterPrim(1.1d, 1.0d);
+        assertGreaterPrim('a', 'b');
+>>>>>>> refs/heads/greater-primitives
     }
 
     private static final String ASSERTION_ERROR_EXPECTED = "AssertionError expected";

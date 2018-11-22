@@ -28,12 +28,58 @@ public class Assert {
      */
     protected Assert() {
     }
+<<<<<<< HEAD
     static public <T> void assertGreaterThan(T o1, T o2, java.util.Comparator<T> comparator) {
         if (comparator.compare(o1, o2) == 1)
             assertTrue(true);
         else
             assertTrue(false);
     }
+=======
+    public static void assertGreaterPrim(byte o1, byte o2) {
+        if (o1 > o2)
+            assertTrue(true);
+        else
+            assertTrue(false);
+    }
+    public static void assertGreaterPrim(short o1, short o2) {
+        if (o1 > o2)
+            assertTrue(true);
+        else
+            assertTrue(false);
+    }
+    public static void assertGreaterPrim(int o1, int o2) {
+        if (o1 > o2)
+            assertTrue(true);
+        else
+            assertTrue(false);
+    }
+    public static void assertGreaterPrim(long o1, long o2) {
+        if (o1 > o2)
+            assertTrue(true);
+        else
+            assertTrue(false);
+    }
+    public static void assertGreaterPrim(float o1, float o2) {
+        if (o1 > o2)
+            assertTrue(true);
+        else
+            assertTrue(false);
+    }
+    public static void assertGreaterPrim(double o1, double o2) {
+        if (o1 > o2)
+            assertTrue(true);
+        else
+            assertTrue(false);
+    }
+    public static void assertGreaterPrim(char o1, char o2) {
+        if (o1 > o2)
+            assertTrue(true);
+        else
+            assertTrue(false);
+    }
+    
+>>>>>>> refs/heads/greater-primitives
     /**
      * Asserts that a condition is true. If it isn't it throws an
      * {@link AssertionError} with the given message.
